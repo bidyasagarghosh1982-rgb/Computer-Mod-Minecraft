@@ -1,0 +1,20 @@
+{
+  "item.computermod.gpu": "Graphics Card (GPU)",
+  "item.computermod.cpu": "Processor (CPU)",
+  "item.computermod.ram": "Memory Module (RAM)",
+  "item.computermod.motherboard": "Motherboard",
+  "item.computermod.power_supply": "Power Supply Unit",
+  "item.computermod.cooling_system": "Cooling System",
+  "item.computermod.storage_drive": "Storage Drive",
+  "item.computermod.computer_case": "Computer Case",
+  "item.computermod.assembled_computer": "Assembled Computer",
+  
+  "block.computermod.gpu_block": "GPU Processing Block",
+  "block.computermod.cpu_block": "CPU Processing Block",
+  "block.computermod.ram_block": "RAM Storage Block",
+  "block.computermod.motherboard_block": "Motherboard Block",
+  "block.computermod.power_supply_block": "Power Supply Block",
+  "block.computermod.cooling_block": "Cooling System Block",
+  "block.computermod.storage_block": "Storage Block",
+  "block.computermod.assembly_station": "Computer Assembly Station"
+}

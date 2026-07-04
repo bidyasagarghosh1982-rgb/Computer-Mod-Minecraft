@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+    }
+}
+
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+
+group = 'com.computermod'
+majorVersion = '1'
+minorVersion = '19'
+patchVersion = '0'
+version = "${majorVersion}.${minorVersion}.${patchVersion}"
+
+archivesBaseName = 'computermod'
+
+minecraft {
+    mappings channel: 'official', version: '1.19.2'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            jvmArgs '-Xmx3G', '-XX:+UnlockDiagnosticVMOptions', '-XX:+ShowMessageBoxOnError'
+            args '--username', 'Developer', '--version', 'latest', '--assetsDir', file('assets')
+        }
+
+        server {
+            workingDirectory project.file('run/server')
+            jvmArgs '-Xmx3G', '-XX:+UnlockDiagnosticVMOptions', '-XX:+ShowMessageBoxOnError'
+            args 'nogui'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.19.2-43.1.1'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
+}

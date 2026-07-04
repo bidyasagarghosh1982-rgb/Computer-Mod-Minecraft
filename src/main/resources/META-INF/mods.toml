@@ -1,0 +1,16 @@
+modLoader="javafxmod"
+loaderVersion="[43,)"
+license="MIT"
+
+[[mods]]
+modId="computermod"
+version="1.19.0"
+displayName="Computer Mod"
+displayURL="https://github.com/bidyasagarghosh1982-rgb/Computer-Mod-Minecraft"
+logoFile="computermod_logo.png"
+creditFile="CREDITS.txt"
+authorList=["Computer Mod Developer"]
+description="'''
+A Minecraft mod that adds computer hardware components including GPU, CPU, RAM, Motherboard, Power Supply, Cooling Systems, Storage, and Case.
+Craft realistic computer parts and build your digital empire!
+'''"
