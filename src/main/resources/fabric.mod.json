@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "computermod",
+  "version": "${version}",
+  "name": "Computer Mod",
+  "description": "A Minecraft mod that adds computer hardware components including GPU, CPU, RAM, Motherboard, Power Supply, Cooling Systems, Storage, Cases, and Operating Systems. Craft realistic computer parts and build your digital empire!",
+  "authors": [
+    "Computer Mod Developer"
+  ],
+  "contact": {
+    "homepage": "https://github.com/bidyasagarghosh1982-rgb/Computer-Mod-Minecraft",
+    "sources": "https://github.com/bidyasagarghosh1982-rgb/Computer-Mod-Minecraft"
+  },
+  "license": "MIT",
+  "icon": "assets/computermod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.computermod.ComputerMod"
+    ],
+    "client": [
+      "com.computermod.client.ComputerModClient"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}",
+    "java": ">=21"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
