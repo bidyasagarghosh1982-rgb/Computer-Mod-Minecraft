@@ -1,13 +1,41 @@
 {
-  "item.computermod.gpu": "Graphics Card (GPU)",
-  "item.computermod.cpu": "Processor (CPU)",
+  "item.computermod.rtx_5090": "NVIDIA RTX 5090",
+  "item.computermod.rtx_5080": "NVIDIA RTX 5080",
+  "item.computermod.rtx_5070_ti": "NVIDIA RTX 5070 Ti",
+  "item.computermod.rtx_5070": "NVIDIA RTX 5070",
+  "item.computermod.rtx_4070_ti_super": "NVIDIA RTX 4070 Ti Super",
+  
+  "item.computermod.rx_9070_xt": "AMD Radeon RX 9070 XT",
+  "item.computermod.rx_7900_xtx": "AMD Radeon RX 7900 XTX",
+  "item.computermod.rx_7800_xt": "AMD Radeon RX 7800 XT",
+  "item.computermod.rx_9060_xt": "AMD Radeon RX 9060 XT",
+  
+  "item.computermod.intel_arc_b770": "Intel Arc B770",
+  "item.computermod.intel_arc_a770": "Intel Arc A770",
+  
+  "item.computermod.ryzen_9_9950x3d": "AMD Ryzen 9 9950X3D",
+  "item.computermod.ryzen_7_9800x3d": "AMD Ryzen 7 9800X3D",
+  "item.computermod.ryzen_7_9700x": "AMD Ryzen 7 9700X",
+  "item.computermod.ryzen_5_9600x": "AMD Ryzen 5 9600X",
+  "item.computermod.ryzen_5_7600": "AMD Ryzen 5 7600",
+  
+  "item.computermod.intel_core_ultra_9_285k": "Intel Core Ultra 9 285K",
+  "item.computermod.intel_core_i9_14900k": "Intel Core i9-14900K",
+  "item.computermod.intel_core_i9_14900ks": "Intel Core i9-14900KS",
+  "item.computermod.intel_core_ultra_7_265k": "Intel Core Ultra 7 265K",
+  "item.computermod.intel_core_i5_13400f": "Intel Core i5-13400F",
+  
   "item.computermod.ram": "Memory Module (RAM)",
   "item.computermod.motherboard": "Motherboard",
   "item.computermod.power_supply": "Power Supply Unit",
   "item.computermod.cooling_system": "Cooling System",
   "item.computermod.storage_drive": "Storage Drive",
   "item.computermod.computer_case": "Computer Case",
-  "item.computermod.assembled_computer": "Assembled Computer",
+  
+  "item.computermod.gaming_pc_high_end": "High-End Gaming PC",
+  "item.computermod.gaming_pc_mid_range": "Mid-Range Gaming PC",
+  "item.computermod.workstation_pc": "Workstation PC",
+  "item.computermod.budget_pc": "Budget Gaming PC",
   
   "block.computermod.gpu_block": "GPU Processing Block",
   "block.computermod.cpu_block": "CPU Processing Block",
