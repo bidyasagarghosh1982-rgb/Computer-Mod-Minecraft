@@ -1,279 +1,136 @@
 package com.computermod.item;
 
-import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
+
 import com.computermod.ComputerMod;
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ComputerMod.MOD_ID);
-
     // ========== NVIDIA GPUs (High-End) ==========
-    public static final RegistryObject<Item> RTX_5090 = ITEMS.register("rtx_5090",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RTX_5080 = ITEMS.register("rtx_5080",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RTX_5070_TI = ITEMS.register("rtx_5070_ti",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RTX_5070 = ITEMS.register("rtx_5070",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RTX_4070_TI_SUPER = ITEMS.register("rtx_4070_ti_super",
-            () -> new Item(new Item.Properties()));
+    public static final Item RTX_5090 = registerItem("rtx_5090", new Item(new Item.Settings()));
+    public static final Item RTX_5080 = registerItem("rtx_5080", new Item(new Item.Settings()));
+    public static final Item RTX_5070_TI = registerItem("rtx_5070_ti", new Item(new Item.Settings()));
+    public static final Item RTX_5070 = registerItem("rtx_5070", new Item(new Item.Settings()));
+    public static final Item RTX_4070_TI_SUPER = registerItem("rtx_4070_ti_super", new Item(new Item.Settings()));
 
     // ========== AMD GPUs (High-End & Value) ==========
-    public static final RegistryObject<Item> RX_9070_XT = ITEMS.register("rx_9070_xt",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RX_7900_XTX = ITEMS.register("rx_7900_xtx",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RX_7800_XT = ITEMS.register("rx_7800_xt",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RX_9060_XT = ITEMS.register("rx_9060_xt",
-            () -> new Item(new Item.Properties()));
+    public static final Item RX_9070_XT = registerItem("rx_9070_xt", new Item(new Item.Settings()));
+    public static final Item RX_7900_XTX = registerItem("rx_7900_xtx", new Item(new Item.Settings()));
+    public static final Item RX_7800_XT = registerItem("rx_7800_xt", new Item(new Item.Settings()));
+    public static final Item RX_9060_XT = registerItem("rx_9060_xt", new Item(new Item.Settings()));
 
     // ========== INTEL GPUs ==========
-    public static final RegistryObject<Item> INTEL_ARC_B770 = ITEMS.register("intel_arc_b770",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> INTEL_ARC_A770 = ITEMS.register("intel_arc_a770",
-            () -> new Item(new Item.Properties()));
+    public static final Item INTEL_ARC_B770 = registerItem("intel_arc_b770", new Item(new Item.Settings()));
+    public static final Item INTEL_ARC_A770 = registerItem("intel_arc_a770", new Item(new Item.Settings()));
 
     // ========== AMD CPUs (Flagship & Gaming) ==========
-    public static final RegistryObject<Item> RYZEN_9_9950X3D = ITEMS.register("ryzen_9_9950x3d",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RYZEN_7_9800X3D = ITEMS.register("ryzen_7_9800x3d",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RYZEN_7_9700X = ITEMS.register("ryzen_7_9700x",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RYZEN_5_9600X = ITEMS.register("ryzen_5_9600x",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RYZEN_5_7600 = ITEMS.register("ryzen_5_7600",
-            () -> new Item(new Item.Properties()));
+    public static final Item RYZEN_9_9950X3D = registerItem("ryzen_9_9950x3d", new Item(new Item.Settings()));
+    public static final Item RYZEN_7_9800X3D = registerItem("ryzen_7_9800x3d", new Item(new Item.Settings()));
+    public static final Item RYZEN_7_9700X = registerItem("ryzen_7_9700x", new Item(new Item.Settings()));
+    public static final Item RYZEN_5_9600X = registerItem("ryzen_5_9600x", new Item(new Item.Settings()));
+    public static final Item RYZEN_5_7600 = registerItem("ryzen_5_7600", new Item(new Item.Settings()));
 
     // ========== INTEL CPUs (Flagship & Gaming) ==========
-    public static final RegistryObject<Item> INTEL_CORE_ULTRA_9_285K = ITEMS.register("intel_core_ultra_9_285k",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> INTEL_CORE_I9_14900K = ITEMS.register("intel_core_i9_14900k",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> INTEL_CORE_I9_14900KS = ITEMS.register("intel_core_i9_14900ks",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> INTEL_CORE_ULTRA_7_265K = ITEMS.register("intel_core_ultra_7_265k",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> INTEL_CORE_I5_13400F = ITEMS.register("intel_core_i5_13400f",
-            () -> new Item(new Item.Properties()));
+    public static final Item INTEL_CORE_ULTRA_9_285K = registerItem("intel_core_ultra_9_285k", new Item(new Item.Settings()));
+    public static final Item INTEL_CORE_I9_14900K = registerItem("intel_core_i9_14900k", new Item(new Item.Settings()));
+    public static final Item INTEL_CORE_I9_14900KS = registerItem("intel_core_i9_14900ks", new Item(new Item.Settings()));
+    public static final Item INTEL_CORE_ULTRA_7_265K = registerItem("intel_core_ultra_7_265k", new Item(new Item.Settings()));
+    public static final Item INTEL_CORE_I5_13400F = registerItem("intel_core_i5_13400f", new Item(new Item.Settings()));
 
     // ========== MOTHERBOARDS ==========
-    public static final RegistryObject<Item> LGA_1700_MOTHERBOARD = ITEMS.register("lga_1700_motherboard",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> AM5_MOTHERBOARD = ITEMS.register("am5_motherboard",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> TRX50_MOTHERBOARD = ITEMS.register("trx50_motherboard",
-            () -> new Item(new Item.Properties()));
+    public static final Item LGA_1700_MOTHERBOARD = registerItem("lga_1700_motherboard", new Item(new Item.Settings()));
+    public static final Item AM5_MOTHERBOARD = registerItem("am5_motherboard", new Item(new Item.Settings()));
+    public static final Item TRX50_MOTHERBOARD = registerItem("trx50_motherboard", new Item(new Item.Settings()));
 
     // ========== DDR5 RAM MODULES (Premium) ==========
-    public static final RegistryObject<Item> DDR5_64GB = ITEMS.register("ddr5_64gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR5_48GB = ITEMS.register("ddr5_48gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR5_32GB = ITEMS.register("ddr5_32gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR5_24GB = ITEMS.register("ddr5_24gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR5_16GB = ITEMS.register("ddr5_16gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR5_12GB = ITEMS.register("ddr5_12gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR5_8GB = ITEMS.register("ddr5_8gb",
-            () -> new Item(new Item.Properties()));
+    public static final Item DDR5_64GB = registerItem("ddr5_64gb", new Item(new Item.Settings()));
+    public static final Item DDR5_48GB = registerItem("ddr5_48gb", new Item(new Item.Settings()));
+    public static final Item DDR5_32GB = registerItem("ddr5_32gb", new Item(new Item.Settings()));
+    public static final Item DDR5_24GB = registerItem("ddr5_24gb", new Item(new Item.Settings()));
+    public static final Item DDR5_16GB = registerItem("ddr5_16gb", new Item(new Item.Settings()));
+    public static final Item DDR5_12GB = registerItem("ddr5_12gb", new Item(new Item.Settings()));
+    public static final Item DDR5_8GB = registerItem("ddr5_8gb", new Item(new Item.Settings()));
 
     // ========== DDR4 RAM MODULES (Standard) ==========
-    public static final RegistryObject<Item> DDR4_64GB = ITEMS.register("ddr4_64gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR4_48GB = ITEMS.register("ddr4_48gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR4_32GB = ITEMS.register("ddr4_32gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR4_24GB = ITEMS.register("ddr4_24gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR4_16GB = ITEMS.register("ddr4_16gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR4_12GB = ITEMS.register("ddr4_12gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR4_8GB = ITEMS.register("ddr4_8gb",
-            () -> new Item(new Item.Properties()));
+    public static final Item DDR4_64GB = registerItem("ddr4_64gb", new Item(new Item.Settings()));
+    public static final Item DDR4_48GB = registerItem("ddr4_48gb", new Item(new Item.Settings()));
+    public static final Item DDR4_32GB = registerItem("ddr4_32gb", new Item(new Item.Settings()));
+    public static final Item DDR4_24GB = registerItem("ddr4_24gb", new Item(new Item.Settings()));
+    public static final Item DDR4_16GB = registerItem("ddr4_16gb", new Item(new Item.Settings()));
+    public static final Item DDR4_12GB = registerItem("ddr4_12gb", new Item(new Item.Settings()));
+    public static final Item DDR4_8GB = registerItem("ddr4_8gb", new Item(new Item.Settings()));
 
     // ========== DDR3 RAM MODULES (Legacy) ==========
-    public static final RegistryObject<Item> DDR3_32GB = ITEMS.register("ddr3_32gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR3_16GB = ITEMS.register("ddr3_16gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR3_8GB = ITEMS.register("ddr3_8gb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DDR3_4GB = ITEMS.register("ddr3_4gb",
-            () -> new Item(new Item.Properties()));
+    public static final Item DDR3_32GB = registerItem("ddr3_32gb", new Item(new Item.Settings()));
+    public static final Item DDR3_16GB = registerItem("ddr3_16gb", new Item(new Item.Settings()));
+    public static final Item DDR3_8GB = registerItem("ddr3_8gb", new Item(new Item.Settings()));
+    public static final Item DDR3_4GB = registerItem("ddr3_4gb", new Item(new Item.Settings()));
 
     // ========== STORAGE DRIVES ==========
-    public static final RegistryObject<Item> NVMe_2TB = ITEMS.register("nvme_2tb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> NVMe_1TB = ITEMS.register("nvme_1tb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> SSD_1TB = ITEMS.register("ssd_1tb",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> HDD_4TB = ITEMS.register("hdd_4tb",
-            () -> new Item(new Item.Properties()));
+    public static final Item NVMe_2TB = registerItem("nvme_2tb", new Item(new Item.Settings()));
+    public static final Item NVMe_1TB = registerItem("nvme_1tb", new Item(new Item.Settings()));
+    public static final Item SSD_1TB = registerItem("ssd_1tb", new Item(new Item.Settings()));
+    public static final Item HDD_4TB = registerItem("hdd_4tb", new Item(new Item.Settings()));
 
     // ========== POWER SUPPLIES ==========
-    public static final RegistryObject<Item> PSU_1200W = ITEMS.register("psu_1200w",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> PSU_850W = ITEMS.register("psu_850w",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> PSU_650W = ITEMS.register("psu_650w",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> PSU_500W = ITEMS.register("psu_500w",
-            () -> new Item(new Item.Properties()));
+    public static final Item PSU_1200W = registerItem("psu_1200w", new Item(new Item.Settings()));
+    public static final Item PSU_850W = registerItem("psu_850w", new Item(new Item.Settings()));
+    public static final Item PSU_650W = registerItem("psu_650w", new Item(new Item.Settings()));
+    public static final Item PSU_500W = registerItem("psu_500w", new Item(new Item.Settings()));
 
     // ========== COOLING SOLUTIONS ==========
-    public static final RegistryObject<Item> LIQUID_COOLER_360MM = ITEMS.register("liquid_cooler_360mm",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> LIQUID_COOLER_280MM = ITEMS.register("liquid_cooler_280mm",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> AIR_COOLER_TOWER = ITEMS.register("air_cooler_tower",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> AIR_COOLER_DOWNDRAFT = ITEMS.register("air_cooler_downdraft",
-            () -> new Item(new Item.Properties()));
+    public static final Item LIQUID_COOLER_360MM = registerItem("liquid_cooler_360mm", new Item(new Item.Settings()));
+    public static final Item LIQUID_COOLER_280MM = registerItem("liquid_cooler_280mm", new Item(new Item.Settings()));
+    public static final Item AIR_COOLER_TOWER = registerItem("air_cooler_tower", new Item(new Item.Settings()));
+    public static final Item AIR_COOLER_DOWNDRAFT = registerItem("air_cooler_downdraft", new Item(new Item.Settings()));
 
     // ========== CASES ==========
-    public static final RegistryObject<Item> CASE_FULL_TOWER = ITEMS.register("case_full_tower",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> CASE_MID_TOWER = ITEMS.register("case_mid_tower",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> CASE_MINI_ITX = ITEMS.register("case_mini_itx",
-            () -> new Item(new Item.Properties()));
+    public static final Item CASE_FULL_TOWER = registerItem("case_full_tower", new Item(new Item.Settings()));
+    public static final Item CASE_MID_TOWER = registerItem("case_mid_tower", new Item(new Item.Settings()));
+    public static final Item CASE_MINI_ITX = registerItem("case_mini_itx", new Item(new Item.Settings()));
 
     // ========== OPERATING SYSTEMS ==========
-    public static final RegistryObject<Item> WINDOWS_11_PRO = ITEMS.register("windows_11_pro",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> WINDOWS_11_HOME = ITEMS.register("windows_11_home",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> WINDOWS_10_PRO = ITEMS.register("windows_10_pro",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> UBUNTU_24_LTS = ITEMS.register("ubuntu_24_lts",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> FEDORA_40 = ITEMS.register("fedora_40",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> MACOS_SONOMA = ITEMS.register("macos_sonoma",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> ARCH_LINUX = ITEMS.register("arch_linux",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DEBIAN_12 = ITEMS.register("debian_12",
-            () -> new Item(new Item.Properties()));
+    public static final Item WINDOWS_11_PRO = registerItem("windows_11_pro", new Item(new Item.Settings()));
+    public static final Item WINDOWS_11_HOME = registerItem("windows_11_home", new Item(new Item.Settings()));
+    public static final Item WINDOWS_10_PRO = registerItem("windows_10_pro", new Item(new Item.Settings()));
+    public static final Item UBUNTU_24_LTS = registerItem("ubuntu_24_lts", new Item(new Item.Settings()));
+    public static final Item FEDORA_40 = registerItem("fedora_40", new Item(new Item.Settings()));
+    public static final Item MACOS_SONOMA = registerItem("macos_sonoma", new Item(new Item.Settings()));
+    public static final Item ARCH_LINUX = registerItem("arch_linux", new Item(new Item.Settings()));
+    public static final Item DEBIAN_12 = registerItem("debian_12", new Item(new Item.Settings()));
 
     // ========== ADDITIONAL COMPONENTS ==========
-    public static final RegistryObject<Item> WIFI_CARD = ITEMS.register("wifi_card",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> ETHERNET_CARD = ITEMS.register("ethernet_card",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> SOUND_CARD = ITEMS.register("sound_card",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> CAPTURE_CARD = ITEMS.register("capture_card",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> USB_HUB = ITEMS.register("usb_hub",
-            () -> new Item(new Item.Properties()));
+    public static final Item WIFI_CARD = registerItem("wifi_card", new Item(new Item.Settings()));
+    public static final Item ETHERNET_CARD = registerItem("ethernet_card", new Item(new Item.Settings()));
+    public static final Item SOUND_CARD = registerItem("sound_card", new Item(new Item.Settings()));
+    public static final Item CAPTURE_CARD = registerItem("capture_card", new Item(new Item.Settings()));
+    public static final Item USB_HUB = registerItem("usb_hub", new Item(new Item.Settings()));
 
     // ========== PERIPHERALS ==========
-    public static final RegistryObject<Item> GAMING_KEYBOARD = ITEMS.register("gaming_keyboard",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> GAMING_MOUSE = ITEMS.register("gaming_mouse",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> GAMING_MONITOR_4K = ITEMS.register("gaming_monitor_4k",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> GAMING_MONITOR_1440P = ITEMS.register("gaming_monitor_1440p",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> MECHANICAL_KEYBOARD = ITEMS.register("mechanical_keyboard",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> WIRELESS_MOUSE = ITEMS.register("wireless_mouse",
-            () -> new Item(new Item.Properties()));
+    public static final Item GAMING_KEYBOARD = registerItem("gaming_keyboard", new Item(new Item.Settings()));
+    public static final Item GAMING_MOUSE = registerItem("gaming_mouse", new Item(new Item.Settings()));
+    public static final Item GAMING_MONITOR_4K = registerItem("gaming_monitor_4k", new Item(new Item.Settings()));
+    public static final Item GAMING_MONITOR_1440P = registerItem("gaming_monitor_1440p", new Item(new Item.Settings()));
+    public static final Item MECHANICAL_KEYBOARD = registerItem("mechanical_keyboard", new Item(new Item.Settings()));
+    public static final Item WIRELESS_MOUSE = registerItem("wireless_mouse", new Item(new Item.Settings()));
 
     // ========== ASSEMBLED COMPUTERS ==========
-    public static final RegistryObject<Item> GAMING_PC_HIGH_END = ITEMS.register("gaming_pc_high_end",
-            () -> new Item(new Item.Properties()));
+    public static final Item GAMING_PC_HIGH_END = registerItem("gaming_pc_high_end", new Item(new Item.Settings()));
+    public static final Item GAMING_PC_MID_RANGE = registerItem("gaming_pc_mid_range", new Item(new Item.Settings()));
+    public static final Item WORKSTATION_PC = registerItem("workstation_pc", new Item(new Item.Settings()));
+    public static final Item BUDGET_PC = registerItem("budget_pc", new Item(new Item.Settings()));
+    public static final Item STREAMING_PC = registerItem("streaming_pc", new Item(new Item.Settings()));
+    public static final Item SERVER_PC = registerItem("server_pc", new Item(new Item.Settings()));
 
-    public static final RegistryObject<Item> GAMING_PC_MID_RANGE = ITEMS.register("gaming_pc_mid_range",
-            () -> new Item(new Item.Properties()));
+    private static Item registerItem(String name, Item item) {
+        return Registry.register(Registries.ITEM, new Identifier(ComputerMod.MOD_ID, name), item);
+    }
 
-    public static final RegistryObject<Item> WORKSTATION_PC = ITEMS.register("workstation_pc",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> BUDGET_PC = ITEMS.register("budget_pc",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> STREAMING_PC = ITEMS.register("streaming_pc",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> SERVER_PC = ITEMS.register("server_pc",
-            () -> new Item(new Item.Properties()));
-
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
+    public static void register() {
+        ComputerMod.LOGGER.debug("Registering Computer Mod items");
     }
 }
